@@ -1,0 +1,142 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'ABeeZee', sans-serif;
+}
+
+.container {
+    max-width: 1264px;
+    margin: 100px auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 507px 720px;
+    grid-template-rows: 540px 386px;
+    grid-gap: 87px 37px;
+
+    &__title {
+        font-size: 14px;
+        font-style: italic;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: #A98D5D;
+        position: relative;
+
+        &::before{
+            content: '';
+            width: 44px;
+            height: 3px;
+            background: #A98D5D;
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -24px;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: 59px;
+    }
+
+}
+
+.grid__image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 20px 20px;
+}
+
+.another__grid {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    grid-template-areas: "item1 item1 item1 item1 item1 item2 item2"
+                         "item1 item1 item1 item1 item1 item2 item2"
+                         "item1 item1 item1 item1 item1 item2 item2"
+                         "item1 item1 item1 item1 item1 item2 item2"
+                         "item1 item1 item1 item1 item1 item2 item2"
+                         "empty empty empty empty empty empty empty"
+                         "item3 item3 item3 item4 item4 item4 item4"
+                         "item3 item3 item3 item4 item4 item4 item4"
+                         "item3 item3 item3 item4 item4 item4 item4"
+                         "item3 item3 item3 item4 item4 item4 item4"
+                         "master master master master master master master";
+    
+    
+    .grid__item1 {
+        grid-area: item1;
+    }
+
+    .grid__item2 {
+        grid-area: item2;
+
+        .enquire {
+            margin-top: 32px;
+            color: #A98D5D;
+            font-style: italic;
+            border: 2px solid #A98D5D;
+            display: inline-block;
+            padding: 10px 40px;
+        }
+    }
+
+    .grid__item3 {
+        grid-area: item3;
+        margin-top: -24px;
+
+        .grid__text--left {
+            margin-right: 37px;
+        }
+    }
+
+    .grid__item4 {
+        grid-area: item4;
+        margin-top: -24px;
+    }
+
+    .master {
+        grid-area: master;
+        display: flex;
+        align-items: center;
+        background-color: #A98D5D;
+        color: #ffffff;
+        margin-top: -8px;
+
+        &__title {
+            font-size: 40px;
+            white-space: nowrap;
+            margin-left: 37px;
+            margin-right: 7px;
+        }
+
+        &__text {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 32px;
+        }
+
+        &__number {
+            white-space: nowrap;
+            font-size: 32px;
+            margin-left: 24px;
+            margin-right: 37px;
+        }
+    }
+
+    .empty__div {
+        grid-area: empty;
+    }
+
+
+}
